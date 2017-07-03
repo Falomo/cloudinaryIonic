@@ -7,6 +7,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+import { CloudinaryModule, CloudinaryConfiguration } from '@cloudinary/angular';
+import { Cloudinary } from 'cloudinary-core';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -14,7 +18,9 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    CloudinaryModule.forRoot({Cloudinary}, { cloud_name: 'evicon' } as CloudinaryConfiguration),
+    IonicModule.forRoot(MyApp),
+    CloudinaryModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
